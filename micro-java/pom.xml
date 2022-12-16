@@ -105,7 +105,11 @@
           </systemPropertyVariables>
         </configuration>
       </plugin>
-      <!-- Adding the jkube plugin configuration here -->
+      <plugin>
+<groupId>org.eclipse.jkube</groupId>
+<artifactId>openshift-maven-plugin</artifactId>
+<version>1.2.0</version>
+</plugin>
     </plugins>
   </build>
   <profiles>
@@ -137,11 +141,13 @@
               </execution>
             </executions>
           </plugin>
+	<plugin>
+	<groupId>org.eclipse.jkube</groupId>
+	<artifactId>openshift-maven-plugin</artifactId>
+	<version>1.2.0</version>
+	</plugin>
         </plugins>
       </build>
-      <properties>
-        <quarkus.package.type>native</quarkus.package.type>
-      </properties>
     </profile>
   </profiles>
 </project>
